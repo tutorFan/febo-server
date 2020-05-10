@@ -16,7 +16,7 @@ app.use("/public", express.static("public"));
 
 // set view engine
 app.set("view engine", "ejs");
-app.use(express.urlencoded());
+//app.use(express.urlencoded());
 
 app.use(
   bodyParser.urlencoded({
