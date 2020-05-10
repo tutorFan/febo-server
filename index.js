@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const http = require('http').createServer();
+const io = require('socket.io')(http);
 
 const app = express();
 
@@ -34,6 +36,12 @@ db.authenticate()
 
 //app.get('/', (req,res) => res.render('index'));
 
+
+//Set Sockets
+io.on('connection',(socket)=>{
+    socket.emit('welcome', 'Hello There and Welcome to the Socket');
+    
+})
 
 
 app.use('/', require ('./route/mobile'));
