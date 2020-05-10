@@ -47,5 +47,5 @@ db.authenticate()
 app.use('/', require ('./route/mobile'));
 
 
-const port = process.env.port || 5000;
+const port = process.env.port || 23367;
 app.listen(port, console.log('Server has started on port ' + port.toString()));
