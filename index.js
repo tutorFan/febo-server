@@ -38,11 +38,11 @@ db.authenticate()
 
 
 //Set Sockets
-io.on('connection',(socket)=>{
+/*io.on('connection',(socket)=>{
     socket.emit('welcome', 'Hello There and Welcome to the Socket');
     
 })
-
+*/
 
 app.use('/', require ('./route/mobile'));
 

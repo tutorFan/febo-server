@@ -3,8 +3,8 @@ const route = express.Router();
 const db = require("../config/db_manager");
 
 
-route.get("*",(req,res)=>{
-  res.render('index');
+route.get("/",(req,res)=>{
+  res.render('pages/index');
 })
 
 
