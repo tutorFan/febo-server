@@ -3,7 +3,7 @@ const readlineSync = require('readline-sync');
 
 module.exports = new Sequelize('telephonebook', 'user', 'user@2020', {
     host: 'localhost',
-    dialect: 'mariadb',
+    dialect: 'mysql',
     pool: {
       max: 5,
       min: 0,

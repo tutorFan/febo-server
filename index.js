@@ -36,7 +36,7 @@ db.authenticate()
 
 
 
-app.use('/', require ('./route/first_page'));
+app.use('/', require ('./route/mobile'));
 
 
 const port = process.env.port || 5000;
