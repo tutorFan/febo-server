@@ -38,14 +38,23 @@ db.authenticate()
 
 
 //Set Sockets
-/*io.on('connection',(socket)=>{
+io.on('connection',(socket)=>{
     socket.emit('welcome', 'Hello There and Welcome to the Socket');
     
 })
-*/
+
 
 app.use('/', require ('./route/mobile'));
 
 
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, console.log('Server has started on port ' + port.toString()));
+
+/*var port_number = server.listen(process.env.PORT || 3000);
+app.listen(port_number);*/
+
+/*const { PORT=3000, LOCAL_ADDRESS='0.0.0.0' } = process.env
+io.listen(PORT, LOCAL_ADDRESS, () => {
+  const address = io.address();
+  console.log('server listening at', address);
+});*/
