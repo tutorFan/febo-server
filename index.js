@@ -42,7 +42,8 @@ http.on('upgrade', function(request, socket, body) {
     var ws = new WebSocket(request, socket, body);
     
     ws.on('message', function(event) {
-      ws.send(event.data);
+      ws.send(event.data + ": risposta dal server");
+      console.log(event.data)
     });
     
     ws.on('close', function(event) {
