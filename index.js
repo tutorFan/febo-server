@@ -42,7 +42,7 @@ http.on('upgrade', function(request, socket, body) {
     var ws = new WebSocket(request, socket, body);
     
     ws.on('message', function(event) {
-      ws.send(": risposta dal server Ash");
+      ws.send(JSON.stringify(": risposta dal server Ash"));
       console.log(event.data)
     });
     
