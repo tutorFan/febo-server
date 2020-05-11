@@ -10,7 +10,7 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true }))
 app.use("/public", express.static("public"));
 
-
+io.set('transports', ['websocket']);
 
 // set view engine
 app.set("view engine", "ejs");
@@ -40,6 +40,7 @@ io.on('connection',(socket)=>{
     socket.emit('welcome', 'Hello There and Welcome to the Socket');
     console.log("A new client is connected")
 })
+
 
 
 app.use('/', require ('./route/mobile'));
