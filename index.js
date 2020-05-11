@@ -1,11 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const http = require('http').createServer();
-const io = require('socket.io')(http);
-
 const app = express();
-
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 //ste the statics
 app.use(bodyParser.json())
 app.use(express.json()) // for parsing application/json
@@ -40,7 +38,7 @@ db.authenticate()
 //Set Sockets
 io.on('connection',(socket)=>{
     socket.emit('welcome', 'Hello There and Welcome to the Socket');
-    
+    console.log("A new client is connected")
 })
 
 
@@ -48,7 +46,7 @@ app.use('/', require ('./route/mobile'));
 
 
 const port = process.env.PORT || 5000;
-app.listen(port, console.log('Server has started on port ' + port.toString()));
+http.listen(port, console.log('Server has started on port ' + port.toString()));
 
 /*var port_number = server.listen(process.env.PORT || 3000);
 app.listen(port_number);*/
