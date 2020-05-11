@@ -42,7 +42,7 @@ http.on('upgrade', function(request, socket, body) {
     var ws = new WebSocket(request, socket, body);
     
     ws.on('message', function(event) {
-      ws.send(JSON.stringify(": risposta dal server Ash"));
+      ws.send(JSON.stringify({msg : "Benvenutoti sei appena connesso al server Ash", from : http.address()}));
       console.log(event.data)
     });
     
